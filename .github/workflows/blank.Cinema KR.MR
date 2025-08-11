@@ -1,0 +1,544 @@
+# This is a basic wor<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema KR.MR - الصفحة الرئيسية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+        }
+        .genre-card {
+            transition: all 0.3s ease;
+        }
+        .genre-card:hover {
+            transform: scale(1.05);
+        }
+        .film-card {
+            transition: all 0.3s ease;
+        }
+        .film-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-black py-4 px-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-film text-red-700 text-3xl mr-3"></i>
+                <h1 class="text-3xl font-bold text-red-700">Cinema KR.MR</h1>
+            </div>
+            <button id="menuBtn" class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="hidden md:flex space-x-6 space-x-reverse">
+                <a href="#" class="text-white hover:text-red-500 font-medium">الصفحة الرئيسية</a>
+                <a href="#films" class="text-white hover:text-red-500 font-medium">الأفلام</a>
+                <a href="#genres" class="text-white hover:text-red-500 font-medium">التصنيفات</a>
+                <a href="#forum" class="text-white hover:text-red-500 font-medium">المنتدى</a>
+                <a href="#support" class="text-white hover:text-red-500 font-medium">الدعم</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-black py-4 px-6 absolute w-full z-40">
+        <nav class="flex flex-col space-y-4">
+            <a href="#" class="text-white hover:text-red-500 font-medium">الصفحة الرئيسية</a>
+            <a href="#films" class="text-white hover:text-red-500 font-medium">الأفلام</a>
+            <a href="#genres" class="text-white hover:text-red-500 font-medium">التصنيفات</a>
+            <a href="#forum" class="text-white hover:text-red-500 font-medium">المنتدى</a>
+            <a href="#support" class="text-white hover:text-red-500 font-medium">الدعم</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 flex items-center justify-center bg-gradient-to-r from-black to-red-900">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-6 z-10 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Cinema KR.MR</h1>
+            <p class="text-xl text-gray-300 mb-8">وجهتك الأولى لمشاهدة وتحميل أحدث الأفلام بجودة عالية</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#films" class="btn-primary bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-6 rounded-lg flex items-center">
+                    <i class="fas fa-download mr-2"></i> تحميل الأفلام
+                </a>
+                <a href="#codes" class="btn-primary bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg flex items-center">
+                    <i class="fas fa-code mr-2"></i> تحميل الأكواد
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Films Section -->
+        <section id="films" class="mb-16">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-red-600 border-r-4 border-red-600 pr-4">تحميل الأفلام</h2>
+                <div class="relative w-64">
+                    <input type="text" placeholder="ابحث عن فيلم..." class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Film Card 1 -->
+                <div class="film-card bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://via.placeholder.com/300x450" alt="Film Poster" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">فيلم الحركة الجديد</h3>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-yellow-400">
+                                <i class="fas fa-star"></i> 8.5
+                            </span>
+                            <span class="text-gray-400">2023</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">وصف قصير للفيلم هنا يظهر بعض التفاصيل المهمة عنه</p>
+                        <button class="w-full bg-red-700 hover:bg-red-800 text-white py-2 rounded-lg">
+                            <i class="fas fa-download mr-2"></i> تحميل
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Film Card 2 -->
+                <div class="film-card bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://via.placeholder.com/300x450" alt="Film Poster" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">الدراما الرائعة</h3>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-yellow-400">
+                                <i class="fas fa-star"></i> 9.0
+                            </span>
+                            <span class="text-gray-400">2022</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">وصف قصير للفيلم هنا يظهر بعض التفاصيل المهمة عنه</p>
+                        <button class="w-full bg-red-700 hover:bg-red-800 text-white py-2 rounded-lg">
+                            <i class="fas fa-download mr-2"></i> تحميل
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Film Card 3 -->
+                <div class="film-card bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://via.placeholder.com/300x450" alt="Film Poster" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">الكوميديا المضحكة</h3>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-yellow-400">
+                                <i class="fas fa-star"></i> 7.8
+                            </span>
+                            <span class="text-gray-400">2023</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">وصف قصير للفيلم هنا يظهر بعض التفاصيل المهمة عنه</p>
+                        <button class="w-full bg-red-700 hover:bg-red-800 text-white py-2 rounded-lg">
+                            <i class="fas fa-download mr-2"></i> تحميل
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Film Card 4 -->
+                <div class="film-card bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://via.placeholder.com/300x450" alt="Film Poster" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">الخيال العلمي</h3>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-yellow-400">
+                                <i class="fas fa-star"></i> 8.9
+                            </span>
+                            <span class="text-gray-400">2023</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">وصف قصير للفيلم هنا يظهر بعض التفاصيل المهمة عنه</p>
+                        <button class="w-full bg-red-700 hover:bg-red-800 text-white py-2 rounded-lg">
+                            <i class="fas fa-download mr-2"></i> تحميل
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg">
+                    عرض المزيد من الأفلام
+                </button>
+            </div>
+        </section>
+
+        <!-- Genres Section -->
+        <section id="genres" class="mb-16">
+            <h2 class="text-3xl font-bold text-red-600 border-r-4 border-red-600 pr-4 mb-8">اختر حسب النوع</h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- Genre Card 1 -->
+                <div class="genre-card bg-gray-900 rounded-lg overflow-hidden shadow-lg text-center p-6 cursor-pointer hover:bg-red-900">
+                    <i class="fas fa-explosion text-4xl text-red-600 mb-3"></i>
+                    <h3 class="font-bold">أكشن</h3>
+                </div>
+                
+                <!-- Genre Card 2 -->
+                <div class="genre-card bg-gray-900 rounded-lg overflow-hidden shadow-lg text-center p-6 cursor-pointer hover:bg-red-900">
+                    <i class="fas fa-masks-theater text-4xl text-red-600 mb-3"></i>
+                    <h3 class="font-bold">دراما</h3>
+                </div>
+                
+                <!-- Genre Card 3 -->
+                <div class="genre-card bg-gray-900 rounded-lg overflow-hidden shadow-lg text-center p-6 cursor-pointer hover:bg-red-900">
+                    <i class="fas fa-face-laugh-squint text-4xl text-red-600 mb-3"></i>
+                    <h3 class="font-bold">كوميديا</h3>
+                </div>
+                
+                <!-- Genre Card 4 -->
+                <div class="genre-card bg-gray-900 rounded-lg overflow-hidden shadow-lg text-center p-6 cursor-pointer hover:bg-red-900">
+                    <i class="fas fa-robot text-4xl text-red-600 mb-3"></i>
+                    <h3 class="font-bold">خيال علمي</h3>
+                </div>
+                
+                <!-- Genre Card 5 -->
+                <div class="genre-card bg-gray-900 rounded-lg overflow-hidden shadow-lg text-center p-6 cursor-pointer hover:bg-red-900">
+                    <i class="fas fa-ghost text-4xl text-red-600 mb-3"></i>
+                    <h3 class="font-bold">رعب</h3>
+                </div>
+                
+                <!-- Genre Card 6 -->
+                <div class="genre-card bg-gray-900 rounded-lg overflow-hidden shadow-lg text-center p-6 cursor-pointer hover:bg-red-900">
+                    <i class="fas fa-heart text-4xl text-red-600 mb-3"></i>
+                    <h3 class="font-bold">رومانسي</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Codes Section -->
+        <section id="codes" class="mb-16">
+            <h2 class="text-3xl font-bold text-red-600 border-r-4 border-red-600 pr-4 mb-8">تحميل الأكواد</h2>
+            
+            <div class="bg-gray-900 rounded-lg p-6 shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Code Card 1 -->
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-bold text-lg">كود العرض الخاص</h3>
+                            <span class="bg-red-700 text-white text-sm px-2 py-1 rounded">جديد</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">هذا الكود يمنحك خصم 20% على جميع الأفلام لمدة أسبوع</p>
+                        <div class="bg-black p-3 rounded flex justify-between items-center">
+                            <code class="font-mono text-red-400">KRMR2023VIP</code>
+                            <button class="text-white bg-red-700 px-3 py-1 rounded hover:bg-red-800">
+                                <i class="fas fa-copy"></i> نسخ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Code Card 2 -->
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-bold text-lg">كود العضوية الذهبية</h3>
+                            <span class="bg-yellow-600 text-white text-sm px-2 py-1 rounded">حصري</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">هذا الكود يمنحك شهر مجاني من العضوية الذهبية</p>
+                        <div class="bg-black p-3 rounded flex justify-between items-center">
+                            <code class="font-mono text-red-400">GOLDENKRMR23</code>
+                            <button class="text-white bg-red-700 px-3 py-1 rounded hover:bg-red-800">
+                                <i class="fas fa-copy"></i> نسخ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forum Section -->
+        <section id="forum" class="mb-16">
+            <h2 class="text-3xl font-bold text-red-600 border-r-4 border-red-600 pr-4 mb-8">منتدى الأفلام</h2>
+            
+            <div class="bg-gray-900 rounded-lg p-6 shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Forum Category 1 -->
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-film text-red-600 text-2xl mr-3"></i>
+                            <h3 class="font-bold text-lg">مناقشات الأفلام</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">شارك آراءك ومناقشاتك حول الأفلام المختلفة مع الأعضاء الآخرين</p>
+                        <a href="#" class="text-red-500 hover:text-red-400 font-medium">
+                            عرض المناقشات <i class="fas fa-arrow-left ml-1"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Forum Category 2 -->
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-star text-yellow-400 text-2xl mr-3"></i>
+                            <h3 class="font-bold text-lg">تقييمات الأفلام</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">شارك تقييماتك للأفلام واقرأ تقييمات الأعضاء الآخرين</p>
+                        <a href="#" class="text-red-500 hover:text-red-400 font-medium">
+                            عرض التقييمات <i class="fas fa-arrow-left ml-1"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Forum Category 3 -->
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-question-circle text-blue-400 text-2xl mr-3"></i>
+                            <h3 class="font-bold text-lg">الأسئلة والاستفسارات</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4">اطرح أسئلتك واستفساراتك حول الأفلام والخدمات</p>
+                        <a href="#" class="text-red-500 hover:text-red-400 font-medium">
+                            عرض الأسئلة <i class="fas fa-arrow-left ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section id="support" class="mb-16">
+            <h2 class="text-3xl font-bold text-red-600 border-r-4 border-red-600 pr-4 mb-8">الدعم الفني</h2>
+            
+            <div class="bg-gray-900 rounded-lg p-6 shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">تواصل معنا</h3>
+                        <p class="text-gray-300 mb-6">لديك استفسار أو مشكلة؟ لا تتردد في التواصل مع فريق الدعم الفني لدينا</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-red-600 text-xl mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-bold">البريد الإلكتروني</h4>
+                                    <p class="text-gray-400">support@cinemakrmr.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-red-600 text-xl mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-bold">الهاتف</h4>
+                                    <p class="text-gray-400">+966 12 345 6789</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-comment-dots text-red-600 text-xl mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-bold">الدردشة المباشرة</h4>
+                                    <p class="text-gray-400">متاحة 24/7</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">إرسال رسالة</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-gray-300 mb-1">الاسم</label>
+                                <input type="text" class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-300 mb-1">البريد الإلكتروني</label>
+                                <input type="email" class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-gray-300 mb-1">الرسالة</label>
+                                <textarea class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 h-32"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-6 rounded-lg">
+                                إرسال الرسالة
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy" class="mb-16">
+            <h2 class="text-3xl font-bold text-red-600 border-r-4 border-red-600 pr-4 mb-8">سياسة الخصوصية</h2>
+            
+            <div class="bg-gray-900 rounded-lg p-6 shadow-lg">
+                <div class="prose prose-invert max-w-none">
+                    <h3 class="text-xl font-bold mb-4">سياسة الخصوصية لـ Cinema KR.MR</h3>
+                    <p class="mb-4">نحن في Cinema KR.MR نحرص على خصوصيتك ونلتزم بحماية بياناتك الشخصية. هذه السياسة توضح كيفية جمعنا واستخدامنا لمعلوماتك.</p>
+                    
+                    <h4 class="font-bold mb-2">المعلومات التي نجمعها</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-2">
+                        <li>المعلومات الشخصية مثل الاسم وعنوان البريد الإلكتروني عند التسجيل</li>
+                        <li>بيانات الاستخدام مثل الأفلام التي تشاهدها وتفضيلاتك</li>
+                        <li>معلومات الجهاز وعنوان IP لأغراض تحسين الخدمة</li>
+                    </ul>
+                    
+                    <h4 class="font-bold mb-2">كيف نستخدم معلوماتك</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-2">
+                        <li>تقديم وتخصيص خدماتنا لك</li>
+                        <li>تحسين جودة المحتوى والخبرة العامة</li>
+                        <li>إرسال تحديثات وعروض خاصة (يمكنك إلغاء الاشتراك في أي وقت)</li>
+                    </ul>
+                    
+                    <h4 class="font-bold mb-2">حماية معلوماتك</h4>
+                    <p class="mb-4">نستخدم تقنيات تشفير متقدمة لحماية بياناتك ونلتزم بأعلى معايير الأمان لمنع الوصول غير المصرح به.</p>
+                    
+                    <p>للمزيد من المعلومات أو لأي استفسار حول سياسة الخصوصية، يرجى التواصل معنا عبر صفحة الدعم الفني.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-film text-red-700 text-2xl mr-3"></i>
+                        <h2 class="text-2xl font-bold text-red-700">Cinema KR.MR</h2>
+                    </div>
+                    <p class="text-gray-400">وجهتك الأولى لمشاهدة وتحميل أحدث الأفلام بجودة عالية</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-red-500">الصفحة الرئيسية</a></li>
+                        <li><a href="#films" class="text-gray-400 hover:text-red-500">الأفلام</a></li>
+                        <li><a href="#genres" class="text-gray-400 hover:text-red-500">التصنيفات</a></li>
+                        <li><a href="#forum" class="text-gray-400 hover:text-red-500">المنتدى</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">المساعدة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#support" class="text-gray-400 hover:text-red-500">الدعم الفني</a></li>
+                        <li><a href="#privacy" class="text-gray-400 hover:text-red-500">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-red-500">الأسئلة الشائعة</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-red-500">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">تابعنا</h3>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-red-500 text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 text-xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h4 class="text-white mb-2">اشترك في النشرة البريدية</h4>
+                        <div class="flex">
+                            <input type="email" placeholder="بريدك الإلكتروني" class="bg-gray-800 text-white px-4 py-2 rounded-r-lg focus:outline-none">
+                            <button class="bg-red-700 hover:bg-red-800 text-white px-4 py-2 rounded-l-lg">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-6 text-center text-gray-500">
+                <p>&copy; 2023 Cinema KR.MR. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Copy code buttons
+        const copyButtons = document.querySelectorAll('[data-code]');
+        copyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.getAttribute('data-code');
+                navigator.clipboard.writeText(code).then(() => {
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-check"></i> تم النسخ';
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                    }, 2000);
+                });
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if (mobileMenu.classList.contains('hidden') === false) {
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>kflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
